@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.pos.controllers.DashboardController"
+      spacing="28"
+      styleClass="screen-root">
+    <padding><Insets top="32" right="32" bottom="32" left="32"/></padding>
+
+    <VBox spacing="4">
+        <Label text="Dashboard" styleClass="screen-title"/>
+        <Label text="Overview of your business at a glance" styleClass="screen-subtitle"/>
+    </VBox>
+
+    <HBox spacing="20">
+        <!-- Products card -->
+        <VBox styleClass="stat-card" spacing="12">
+            <Label text="Products" styleClass="stat-card-label"/>
+            <Label fx:id="totalProductosLabel" text="..." styleClass="stat-card-value stat-blue"/>
+            <Label text="Total in catalog" styleClass="stat-card-footer"/>
+        </VBox>
+
+        <!-- Clients card -->
+        <VBox styleClass="stat-card" spacing="12">
+            <Label text="Clients" styleClass="stat-card-label"/>
+            <Label fx:id="totalClientesLabel" text="..." styleClass="stat-card-value stat-green"/>
+            <Label text="Registered clients" styleClass="stat-card-footer"/>
+        </VBox>
+
+        <!-- Invoices card -->
+        <VBox styleClass="stat-card" spacing="12">
+            <Label text="Invoices" styleClass="stat-card-label"/>
+            <Label fx:id="totalFacturasLabel" text="..." styleClass="stat-card-value stat-yellow"/>
+            <Label text="Total transactions" styleClass="stat-card-footer"/>
+        </VBox>
+
+        <!-- Revenue card -->
+        <VBox styleClass="stat-card" spacing="12">
+            <Label text="Revenue" styleClass="stat-card-label"/>
+            <Label fx:id="ingresosLabel" text="..." styleClass="stat-card-value stat-red"/>
+            <Label text="Total earnings" styleClass="stat-card-footer"/>
+        </VBox>
+    </HBox>
+</VBox>

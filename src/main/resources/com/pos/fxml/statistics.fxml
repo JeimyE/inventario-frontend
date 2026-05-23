@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.pos.controllers.StatisticsController"
+      spacing="20"
+      styleClass="screen-root">
+    <padding><Insets top="28" right="28" bottom="28" left="28"/></padding>
+
+    <VBox spacing="4">
+        <Label text="Statistics" styleClass="screen-title"/>
+        <Label text="Visual insights into your sales performance" styleClass="screen-subtitle"/>
+    </VBox>
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+        <!-- Sales by day chart -->
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Sales by Day" styleClass="chart-title"/>
+            <LineChart fx:id="salesChart" VBox.vgrow="ALWAYS" legendVisible="false">
+                <xAxis>
+                    <CategoryAxis fx:id="salesXAxis" label="Date"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="salesYAxis" label="Revenue ($)"/>
+                </yAxis>
+            </LineChart>
+        </VBox>
+
+        <!-- Top products chart -->
+        <VBox spacing="8" HBox.hgrow="ALWAYS">
+            <Label text="Top Products" styleClass="chart-title"/>
+            <BarChart fx:id="topProductsChart" VBox.vgrow="ALWAYS" legendVisible="false">
+                <xAxis>
+                    <CategoryAxis fx:id="topXAxis" label="Product"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis fx:id="topYAxis" label="Units Sold"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+
+    </HBox>
+</VBox>
